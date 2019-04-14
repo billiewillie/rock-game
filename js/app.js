@@ -32,6 +32,8 @@ const game = () => {
   const playMatch = () => {
     options.forEach(option => {
       option.addEventListener("click", function() {
+        playerHand.src = `../img/rock.png`;
+        computerHand.src = `../img/rock.png`;
         const computerNumber = Math.floor(Math.random() * 3);
         const computerChoice = computerOptions[computerNumber];
         setTimeout(() => {

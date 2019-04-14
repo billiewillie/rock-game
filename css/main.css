@@ -8,9 +8,6 @@ body {
   display: flex;
   min-height: 100vh;
   min-width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   font-family: sans-serif;
   text-align: center;
   color: #fff;

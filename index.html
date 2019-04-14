@@ -5,14 +5,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Катя, доброе утро!</title>
+  <title>Rock paper scissors</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
+  <section class="game">
+    <div class="score">
+      <div class="score__part player-score">
+        <h2>player</h2>
+        <p>0</p>
+      </div>
+      <div class="score__part computer-score">
+        <h2>computer</h2>
+        <p>0</p>
+      </div>
+    </div>
+    <div class="intro">
+      <h1>Rock paper scissors</h1>
+      <button>Lets play</button>
+    </div>
+    <div class="match fadeOut">
+      <h2 class="winner">Choose an option</h2>
+      <div class="hands">
+        <img src="img/rock.png" alt="" class="player-hand">
+        <img src="img/paper.png" alt="" class="computer-hand">
+      </div>
+      <div class="options">
+        <button class="rock">rock</button>
+        <button class="paper">paper</button>
+        <button class="scissors">scissors</button>
+      </div>
+    </div>
+  </section>
 
-
-  <script src="js/main.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>

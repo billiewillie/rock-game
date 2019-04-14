@@ -23,16 +23,31 @@ const game = () => {
     });
   };
 
+  hands.forEach(hand => {
+    hand.addEventListener("animationend", function() {
+      this.style.animation = "";
+    });
+  });
+
   const playMatch = () => {
     options.forEach(option => {
       option.addEventListener("click", function() {
         const computerNumber = Math.floor(Math.random() * 3);
         const computerChoice = computerOptions[computerNumber];
-        compareHands(this.textContent, computerChoice);
-        playerHand.src = `../img/${this.textContent}.png`;
-        computerHand.src = `../img/${computerChoice}.png`;
+        setTimeout(() => {
+          compareHands(this.textContent, computerChoice);
+          playerHand.src = `../img/${this.textContent}.png`;
+          computerHand.src = `../img/${computerChoice}.png`;
+        }, 2000);
+        playerHand.style.animation = "shakePlayer 2s ease";
+        computerHand.style.animation = "shakeComputer 2s ease";
       });
     });
+  };
+
+  const updateScore = () => {
+    playerScore.textContent = pScore;
+    computerScore.textContent = cScore;
   };
 
   const compareHands = (playerChoice, computerChoice) => {
@@ -43,25 +58,34 @@ const game = () => {
     if (playerChoice === "rock") {
       if (computerChoice === "scissors") {
         winner.textContent = "Player wins";
+        pScore++;
       } else {
         winner.textContent = "Computer wins";
+        cScore++;
       }
+      updateScore();
       return;
     }
     if (playerChoice === "scissors") {
       if (computerChoice === "paper") {
         winner.textContent = "Player wins";
+        pScore++;
       } else {
         winner.textContent = "Computer wins";
+        cScore++;
       }
+      updateScore();
       return;
     }
     if (playerChoice === "paper") {
       if (computerChoice === "rock") {
         winner.textContent = "Player wins";
+        pScore++;
       } else {
         winner.textContent = "Computer wins";
+        cScore++;
       }
+      updateScore();
       return;
     }
   };

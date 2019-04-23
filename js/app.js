@@ -40,8 +40,8 @@ const game = () => {
         computerHand.style.animation = "shakeComputer 2s ease";
         setTimeout(() => {
           compareHands(this.textContent, computerChoice);
-          playerHand.src = `/img/${this.textContent}.png`;
-          computerHand.src = `/img/${computerChoice}.png`;
+          playerHand.src = `img/${this.textContent}.png`;
+          computerHand.src = `img/${computerChoice}.png`;
         }, 2000);
       });
     });
